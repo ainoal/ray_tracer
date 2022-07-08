@@ -23,6 +23,16 @@ int main() {
         std::cout << "Error: Failed to initialize GLAD" << "\n";
         return 1;
     }
+
+    Shader cgShader("cg.vert", "cg.frag"); // Vertex and fragment shaders
+
+    /* Vertices for Hello Triangle/ testing the code, especially the shaders */
+    float vertices[] = {
+        -0.5f, -0.5f, 0.0f, // left
+         0.5f, -0.5f, 0.0f, // right
+         0.0f,  0.5f, 0.0f  // top
+    };
+
     while (!glfwWindowShouldClose(window)) {
         glClearColor(0.02f, 0.02f, 0.02f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
